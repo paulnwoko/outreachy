@@ -19,6 +19,16 @@ result:
     Thread model: posix
     InstalledDir: /usr/bin
     
+Next, download the WASI-sdk.The wasi-sdk provides a clang which is configured to target WASI and use the WASI sysroot by default if you put the extracted tree into /, so we can compile our program like:
+
+$ opt/wasi-sdk/share/sysroot/bin/clang demo.c -o demo.wasm
+If you would want to extract it elsewhere, you can specify the sysroot directory like this:
+
+$ ~/wasi-sdk-12.0/bin/clang demo.c --sysroot <path to sysroot> -o demo.wasm
+If you're using the wasi-sdk, the sysroot directory is located in opt/wasi-sdk/share/sysroot/ on Linux and mac.
+
+This is just regular clang, configured to use a WebAssembly target and sysroot. The output name specified with the "-o" flag can be anything you want, and does not need to contain the .wasm extension. In fact, the output of clang here is a standard WebAssembly module:
+
 
 ## Install Runtime enviroment:
 you could use either wasmtime or wasmer or other runtime enviroments
