@@ -8,7 +8,9 @@ In this tutorial i will be compiling C programs to WASI and executing the compil
 
 ## Compiling to .WASM
 
-The wasi-sdk provides a clang which is configured to target WASI
+The wasi-sdk provides a clang which is configured to target [WASI](https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-intro.md)
+
+[WASI](https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-intro.md) stands for WebAssembly System Interface. It's an API designed by the Wasmtime project that provides access to several operating-system-like features, including files and filesystems, Berkeley sockets, clocks, and random numbers.
 
 use the comand to generate a webassembly file in pure binary format:
 
